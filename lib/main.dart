@@ -4,6 +4,7 @@ import 'package:indikey/Componentes/constant.dart';
 import 'package:indikey/Dashboard/dashboard.dart';
 import 'package:indikey/Get_started/login.dart';
 import 'package:indikey/Home/HomeScreen.dart';
+import 'package:indikey/Site%20options/Empresas/AP.dart';
 
 import 'Site options/Empresas/Ui empresas.dart';
 
@@ -29,6 +30,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home:
+        //Ap()
       Home(),
      // Dashboard(),
       //Empresa_widget(),
