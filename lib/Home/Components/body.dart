@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:indikey/Componentes/constant.dart';
-import 'package:indikey/Get_started/cadastro.dart';
+import 'package:indikey/Get_started/Cadastro/cadastro.dart';
 
 class Body extends StatelessWidget {
   @override

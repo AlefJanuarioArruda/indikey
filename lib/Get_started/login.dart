@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:indikey/Get_started/cadastro.dart';
+import 'package:indikey/Get_started/Cadastro/cadastro.dart';
 import 'package:lottie/lottie.dart';
 
 import '../Dashboard/dashboard.dart';

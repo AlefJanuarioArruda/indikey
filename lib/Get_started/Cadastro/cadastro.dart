@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:indikey/Home/HomeScreen.dart';
 import 'package:lottie/lottie.dart';
 
-import '../Componentes/constant.dart';
-import '../Componentes/default.button.dart';
-import 'login.dart';
+import '../../Componentes/constant.dart';
+import '../../Componentes/default.button.dart';
+import '../login.dart';
+import 'Controllers.dart';
 
 class Cadastro extends StatelessWidget {
   @override
@@ -169,6 +170,7 @@ class _BodyState extends State<Body> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 TextField(
+                  controller: EmailCadastro,
                   decoration: InputDecoration(
                     hintText: 'Email',
                     filled: true,
@@ -187,6 +189,7 @@ class _BodyState extends State<Body> {
                 ),
                 SizedBox(height: 30),
                 TextFormField(
+                  controller: Controllers().SenhaCadastro,
                   obscureText: obdscure,
                   decoration: InputDecoration(
                     hintText: 'Senha',
@@ -217,6 +220,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),SizedBox(height: 30),
                 TextFormField(
+                  controller: Controllers().RepitaSenhaCadastro,
                   obscureText: obdscure,
                   decoration: InputDecoration(
                     hintText: 'Repita Senha',
@@ -248,21 +252,25 @@ class _BodyState extends State<Body> {
                 ),
                 SizedBox(height: 30),
                 Textfield(
+                  controller: Controllers().ChavePixCadastro,
                   obscure: false,
                   title: 'Chave Pix',
                 ),
                 SizedBox(height: 30),
                 Textfield(
+                  controller: Controllers().TipoChavePixCadastro,
                   obscure: false,
                   title: 'Tipo Chave pix',
                 ),
                 SizedBox(height: 30),
                 Textfield(
+                  controller: Controllers().NomeCompleto,
                   obscure: false,
                   title: 'Nome Completo',
                 ),
                 SizedBox(height: 30),
                 Textfield(
+                  controller: Controllers().CpfCadastro,
                   obscure: false,
                   title: 'Cpf',
                 ),
@@ -272,7 +280,8 @@ class _BodyState extends State<Body> {
                       width: double.infinity,
                       height: 50,
                       child: Center(child: Text("Sign In"))),
-                  onPressed: () => print("it's pressed"),
+                  onPressed: () => print(Controllers().NomeCompleto.value)
+                  ,
                   style: ElevatedButton.styleFrom(
                     primary: Colors.deepPurple,
                     onPrimary: Colors.white,
@@ -282,6 +291,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),
                 SizedBox(
+
                   height: 40,
                 ),
                 Container(
@@ -449,13 +459,15 @@ class _BodyState extends State<Body> {
 class Textfield extends StatelessWidget {
   final bool obscure;
   final String title;
+  final TextEditingController controller;
 
-  const Textfield({Key? key, required this.obscure, required this.title})
+  const Textfield({Key? key, required this.obscure, required this.title, required this.controller})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return TextField(
+      controller: controller,
       obscureText: obscure,
       decoration: InputDecoration(
         hintText: title,
