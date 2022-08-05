@@ -189,7 +189,7 @@ class _BodyState extends State<Body> {
                 ),
                 SizedBox(height: 30),
                 TextFormField(
-                  controller: Controllers().SenhaCadastro,
+                  controller: SenhaCadastro,
                   obscureText: obdscure,
                   decoration: InputDecoration(
                     hintText: 'Senha',
@@ -220,7 +220,7 @@ class _BodyState extends State<Body> {
                   ),
                 ),SizedBox(height: 30),
                 TextFormField(
-                  controller: Controllers().RepitaSenhaCadastro,
+                  controller: RepitaSenhaCadastro,
                   obscureText: obdscure,
                   decoration: InputDecoration(
                     hintText: 'Repita Senha',
@@ -252,25 +252,25 @@ class _BodyState extends State<Body> {
                 ),
                 SizedBox(height: 30),
                 Textfield(
-                  controller: Controllers().ChavePixCadastro,
+                  controller: ChavePixCadastro,
                   obscure: false,
                   title: 'Chave Pix',
                 ),
                 SizedBox(height: 30),
                 Textfield(
-                  controller: Controllers().TipoChavePixCadastro,
+                  controller: TipoChavePixCadastro,
                   obscure: false,
                   title: 'Tipo Chave pix',
                 ),
                 SizedBox(height: 30),
                 Textfield(
-                  controller: Controllers().NomeCompleto,
+                  controller:NomeCompleto,
                   obscure: false,
                   title: 'Nome Completo',
                 ),
                 SizedBox(height: 30),
                 Textfield(
-                  controller: Controllers().CpfCadastro,
+                  controller: CpfCadastro,
                   obscure: false,
                   title: 'Cpf',
                 ),
@@ -280,7 +280,7 @@ class _BodyState extends State<Body> {
                       width: double.infinity,
                       height: 50,
                       child: Center(child: Text("Sign In"))),
-                  onPressed: () => print(Controllers().NomeCompleto.value)
+                  onPressed: () => print(CpfCadastro.toString())
                   ,
                   style: ElevatedButton.styleFrom(
                     primary: Colors.deepPurple,
