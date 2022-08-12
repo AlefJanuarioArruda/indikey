@@ -280,8 +280,16 @@ class _BodyState extends State<Body> {
                       width: double.infinity,
                       height: 50,
                       child: Center(child: Text("Sign In"))),
-                  onPressed: () => print(CpfCadastro.toString())
-                  ,
+                  onPressed: () {
+                    AutenticationServices().createNewuser();
+                    print(AutenticationServices().createNewuser());
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => LoginPage(),
+                      ),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     primary: Colors.deepPurple,
                     onPrimary: Colors.white,
@@ -347,65 +355,66 @@ class _BodyState extends State<Body> {
                 //mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                 Container(
-                width: 360,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Registrar-se \n Agora',
-                      style: TextStyle(
-                        fontSize: 45,
-                        fontWeight: FontWeight.bold,
+                  width: 360,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Registrar-se \n Agora',
+                        style: TextStyle(
+                          fontSize: 45,
+                          fontWeight: FontWeight.bold,
+                        ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 30,
-                    ),
-                    Text(
-                      "Já possui Conta",
-                      style: TextStyle(
-                          color: Colors.black54, fontWeight: FontWeight.bold),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      children: [
-                        Text(
-                          "",
-                          style: TextStyle(
-                              color: Colors.black54, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(width: 5),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(builder: (context) => LoginPage()),
-                            );
-
-                          },
-                          child: Text(
-                            "Entrar Agora!",
+                      SizedBox(
+                        height: 30,
+                      ),
+                      Text(
+                        "Já possui Conta",
+                        style: TextStyle(
+                            color: Colors.black54, fontWeight: FontWeight.bold),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            "",
                             style: TextStyle(
-                                color: Colors.deepPurple,
-                                fontWeight: FontWeight.bold),
+                                color: Colors.black54, fontWeight: FontWeight.bold),
                           ),
-                        ),
+                          SizedBox(width: 5),
+                          GestureDetector(
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => LoginPage()),
+                              );
+
+                            },
+                            child: Text(
+                              "Entrar Agora!",
+                              style: TextStyle(
+                                  color: Colors.deepPurple,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ),
+                        ],
+                      ),
+                    SizedBox(height: 40),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        //      _loginWithButton(image: 'images/google.png'),
+                        //      _loginWithButton(image: 'images/github.png', isActive: true),
+                        //      _loginWithButton(image: 'images/facebook.png'),
                       ],
                     ),
-                  SizedBox(height: 40),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      //      _loginWithButton(image: 'images/google.png'),
-                      //      _loginWithButton(image: 'images/github.png', isActive: true),
-                      //      _loginWithButton(image: 'images/facebook.png'),
-                    ],
-                  ),
-                ],
+                  ],
               ),
-            )])])))]));
+            ),
+                ])])))]));
 
 
 
